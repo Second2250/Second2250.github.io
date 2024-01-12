@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin-top: 50px;
+        }
+        form {
+            max-width: 300px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #mensaje-exito {
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="loginForm" onsubmit="return validarFormulario()">
+        <h2>Iniciar Sesión</h2>
+        <label for="correo">Correo Electrónico:</label>
+        <input type="email" id="correo" name="correo" required>
+        
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario" required>
+
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" required>
+
+        <button type="submit">Iniciar Sesión</button>
+
+        <div id="mensaje-exito"></div>
+    </form>
+
+    <script>
+        function validarFormulario() {
+            var correo = document.getElementById("correo").value;
+            var usuario = document.getElementById("usuario").value;
+            var contrasena = document.getElementById("contrasena").value;
+
+            // Validar el formato del correo electrónico
+            var patronCorreo = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+            if (!patronCorreo.test(correo)) {
+                alert("Correo electrónico no válido. Inténtelo de nuevo.");
+                return false;
+            }
+
+            // Aquí podrías agregar más validaciones según tus requisitos
+
+            // Simular el proceso de inicio de sesión exitoso
+            // En una aplicación real, este sería el lugar para realizar la autenticación en el servidor
+            // y mostrar el mensaje de éxito si la autenticación es exitosa.
+            document.getElementById("mensaje-exito").innerText = "Inicio de sesión exitoso para el usuario: " + usuario;
+
+            // Evitar el envío del formulario
+            return false;
+        }
+    </script>
+
+</body>
+</html>
