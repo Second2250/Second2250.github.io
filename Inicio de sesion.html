@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <style>
+        body {
+            background-color: #808080; /* Fondo */
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #login-form {
+            background-color: #8b5cf6; /* Morado */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #d1d5db;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #22c55e; /* Verde */
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #16a34a; /* Verde oscuro al pasar el ratón */
+        }
+    </style>
+</head>
+<body>
+    <div id="login-form">
+        <h2>Iniciar Sesión</h2>
+        <form  class="Form-log" onsubmit="return validacionExpre()">
+
+
+            <input type="text" id="email" name="email" placeholder="Email" >
+            
+            <input id="password" type="password" placeholder="Contraseña" >
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+    </div>
+    <script src="jsk.js"></script>
+
+</body>
+</html>
